@@ -1,0 +1,62 @@
+body {
+  height: 100vh; 
+}
+
+.container-fluid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.notifycation {
+  text-align: center;
+}
+
+.fa-facebook-messenger {
+  font-size: 80px;
+  color: blue;
+}
+
+.notifycation::after {
+  content: attr(data-count);
+  font-size: 20px;
+  background-color: red;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  text-align: center;
+  padding: 5px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -3px;
+  transition: all .35s ease-in-out ;
+  font-weight: bold;
+  opacity: 0;
+  animation: animate .9s ease-out infinite;
+}
+
+@keyframes animate {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.1);
+  }
+}
+
+.notifycation.add-number::after {
+  opacity: 1;
+}
+
+.btn-push {
+  background-color: black;
+  color: #fff;
+  margin-top: 60px;
+  font-size: 20px;
+  padding: 12px 24px;
+  cursor: pointer;
+}
